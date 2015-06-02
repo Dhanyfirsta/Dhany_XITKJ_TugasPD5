@@ -1,0 +1,165 @@
+object Form1: TForm1
+  Left = 230
+  Height = 513
+  Top = 132
+  Width = 773
+  Caption = 'Form1'
+  ClientHeight = 513
+  ClientWidth = 773
+  OnCreate = FormCreate
+  LCLVersion = '1.4.0.4'
+  object Tambahkan: TButton
+    Left = 496
+    Height = 25
+    Top = 106
+    Width = 75
+    Caption = 'Tambahkan'
+    OnClick = TambahkanClick
+    TabOrder = 0
+  end
+  object Ubah: TButton
+    Left = 496
+    Height = 25
+    Top = 176
+    Width = 75
+    Caption = 'Ubah'
+    TabOrder = 1
+  end
+  object Hapus: TButton
+    Left = 496
+    Height = 25
+    Top = 250
+    Width = 75
+    Caption = 'Hapus'
+    TabOrder = 2
+  end
+  object keluar: TButton
+    Left = 496
+    Height = 25
+    Top = 320
+    Width = 75
+    Caption = 'keluar'
+    TabOrder = 3
+  end
+  object Edit1: TEdit
+    Left = 112
+    Height = 27
+    Top = 104
+    Width = 216
+    Color = clLime
+    OnChange = Edit1Change
+    TabOrder = 4
+  end
+  object Edit2: TEdit
+    Left = 112
+    Height = 27
+    Top = 176
+    Width = 216
+    Color = clLime
+    TabOrder = 5
+  end
+  object Edit3: TEdit
+    Left = 112
+    Height = 27
+    Top = 248
+    Width = 216
+    Color = clLime
+    TabOrder = 6
+  end
+  object Edit4: TEdit
+    Left = 112
+    Height = 27
+    Top = 320
+    Width = 216
+    Color = clLime
+    TabOrder = 7
+  end
+  object NIS: TLabel
+    Left = 113
+    Height = 17
+    Top = 72
+    Width = 20
+    Caption = 'NIS'
+    ParentColor = False
+  end
+  object Nama: TLabel
+    Left = 113
+    Height = 17
+    Top = 144
+    Width = 34
+    Caption = 'Nama'
+    ParentColor = False
+  end
+  object Kelas: TLabel
+    Left = 113
+    Height = 17
+    Top = 216
+    Width = 30
+    Caption = 'Kelas'
+    ParentColor = False
+  end
+  object Email: TLabel
+    Left = 112
+    Height = 17
+    Top = 288
+    Width = 31
+    Caption = 'Email'
+    ParentColor = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 119
+    Height = 100
+    Top = 400
+    Width = 481
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 8
+  end
+  object Panel1: TPanel
+    Left = 304
+    Height = 50
+    Top = 8
+    Width = 170
+    Caption = 'Data Siswa'
+    Color = 65301
+    ParentColor = False
+    TabOrder = 9
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'tugaspd5'
+    User = 'root'
+    Password = 'konjiko123'
+    Protocol = 'mysql'
+    left = 24
+    top = 24
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'Select * from siswa '
+    )
+    Params = <>
+    left = 24
+    top = 104
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection1
+    Params = <>
+    left = 24
+    top = 184
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 24
+    top = 272
+  end
+end
